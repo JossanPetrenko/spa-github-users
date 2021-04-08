@@ -1,7 +1,8 @@
 import React from "react";
+import PageTemplate from "ui/components/PageTemplate";
 
 function Login() {
-  return <div>LoginPage</div>;
+  return <PageTemplate>LoginPage</PageTemplate>;
 }
 
 export default Login;
