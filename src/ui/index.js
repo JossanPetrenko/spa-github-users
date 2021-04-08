@@ -24,6 +24,8 @@ function App() {
         />
         <Route exact path="/home" component={Home} />
         <Route path="/login" component={Login} />
+
+        {/*fallback route*/}
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
