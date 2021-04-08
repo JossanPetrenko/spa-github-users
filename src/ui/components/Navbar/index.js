@@ -1,11 +1,29 @@
 import React from "react";
-import { NavbarWrapper } from "./styles";
+import {
+  NavbarWrapper,
+  NavbarTitle,
+  NavbarButtonsWarpper,
+  ArrowRight,
+} from "./styles";
+import { NavbarIcon } from "./styles";
 
 function Navbar() {
   return (
-    <NavbarWrapper>
-      <div>Navbar</div>
-    </NavbarWrapper>
+    <>
+      <NavbarWrapper>
+        <NavbarTitle>
+          <NavbarIcon />
+          Find user
+        </NavbarTitle>
+
+        <NavbarButtonsWarpper>
+          <span>Home - </span>
+          <span>About</span>
+        </NavbarButtonsWarpper>
+      </NavbarWrapper>
+
+      <ArrowRight />
+    </>
   );
 }
 

@@ -11,7 +11,7 @@ function PageTemplate({ children }) {
         <Navbar />
       </div>
 
-      <h1>{"PageTemplate"}</h1>
+      <div style={{ marginTop: 30 }}>{"PageTemplate"}</div>
       <div>{children}</div>
     </PageTemplateWrapper>
   );

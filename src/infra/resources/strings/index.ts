@@ -7,6 +7,6 @@ const strings = {
     }
   
 };
-  
-  export default strings;
+
+export default strings;
   
