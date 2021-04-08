@@ -1,15 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "ui";
-import reportWebVitals from "./reportWebVitals";
-import "antd/dist/antd.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import reportWebVitals from './reportWebVitals';
+import 'antd/dist/antd.css';
+
+import './index.css';
+import App from 'ui';
+
+import AppHelmet from 'ui/components/AppHelmet';
 
 ReactDOM.render(
   <React.StrictMode>
+    <AppHelmet />
     <App />
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
+
 import {
   NavbarWrapper,
   NavbarTitle,
+  NavbarIcon,
   NavbarButtonsWarpper,
   ArrowRight,
-} from "./styles";
-import { NavbarIcon } from "./styles";
+} from './styles';
 
 function Navbar() {
   return (
@@ -18,7 +19,7 @@ function Navbar() {
 
         <NavbarButtonsWarpper>
           <span>Home - </span>
-          <span>About</span>
+          <span>Sobre</span>
         </NavbarButtonsWarpper>
       </NavbarWrapper>
 

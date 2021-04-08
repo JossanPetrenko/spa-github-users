@@ -1,9 +1,12 @@
 const strings = {
+    app:{
+        helmet:'Github Find User',
+    },
     comum:{
-        search:'Pesquisar',
+        search:'Search',
     },
     users : {
-        search_placeholder:'Usuario Github...',
+        search_placeholder:'Github User...',
     }
   
 };
