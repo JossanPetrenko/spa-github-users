@@ -3,6 +3,7 @@ import colors from 'infra/resources/colors';
 
 export const UserCardWrapper = styled.div`
   margin: 12px 0px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
 `;
 
 export const UserCardContent = styled.div`
@@ -11,13 +12,13 @@ export const UserCardContent = styled.div`
 
 export const UserCardInfoWrapper = styled.div`
   display: flex;
-  flex: 2;
+  flex: 3;
   margin-left: 16px;
 `;
 
 export const UserCardCollumWrapper = styled.div`
   display: flex;
-  flex: 1;
+  flex: ${(props) => props.flex};
   flex-direction: column;
 `;
 
@@ -30,5 +31,10 @@ export const UserCardLabel = styled.span`
 export const UserCardValue = styled.span`
   color: ${colors.gray700};
   font-weight: 700;
-  text-transform: capitalize;
+`;
+
+export const UserCardButtonDivider = styled.div`
+  margin-top: 1px;
+  margin-bottom: 1px;
+  border-bottom: 1px solid ${colors.gray200};
 `;

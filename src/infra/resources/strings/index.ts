@@ -5,7 +5,6 @@ const strings = {
     },
     comum:{
         about: 'About',
-        details: 'Details',
         home: 'Home',
         search:'Search',
         warning: 'Warning',
@@ -13,9 +12,11 @@ const strings = {
     users : {
         id: 'Id',
         node_id: 'Node Id',
+        repositories: 'Repositories',
         score: 'Score',
         search_input_placeholder:'Input Github User...',
         search_input_warning: 'Need input a Github user name',
+        starred: 'Starred',
         type: 'Type',
         url: 'Url',
         user_name: 'User Name',

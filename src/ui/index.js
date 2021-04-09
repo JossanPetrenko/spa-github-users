@@ -17,6 +17,12 @@ function App() {
           <Switch>
             <Route exact path="/home" component={Home} />
             <Route exact path="/about" component={About} />
+            <Route
+              exact
+              path="/user/:login/repositories"
+              component={NotFound}
+            />
+            <Route exact path="/user/:login/starred" component={NotFound} />
 
             {/*fallback route*/}
             <Route component={NotFound} />
