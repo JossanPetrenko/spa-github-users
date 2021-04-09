@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 
-import UserCard from 'ui/components/UserCard';
+import UserCard, {SkeletonUserCard} from 'ui/components/UserCard';
 import GithubContext from 'context/github/githubContext';
 
 function UserList() {
@@ -9,15 +9,17 @@ function UserList() {
   const {loading, users} = githubContext;
 
   if (loading) {
-    return <></>;
+    return (
+      <>
+        <SkeletonUserCard />
+      </>
+    );
   }
   return (
     <>
-      <div>
-        {users.map((user) => (
-          <UserCard user={user} />
-        ))}
-      </div>
+      {users.map((user) => (
+        <UserCard user={user} />
+      ))}
     </>
   );
 }

@@ -1,8 +1,14 @@
 const URL = {
+  APP:{
+    ABOUT: '/about',
+    HOME: '/home',
+    USER:(userName: string) => `/user/${userName}/repositories`,
+  },
   USER: {
     USERS:(value: string) => `https://api.github.com/search/users?q=${value}`,
     USER:(userName: string) => `https://api.github.com/users/${userName}`,
-    REPOS:(userName: string) => `https://api.github.com/users/${userName}/repos?per_page=10&sort=created`,
+    REPOS:(userName: string) => `https://api.github.com/users/${userName}/repos`,
+    STARRED:(userName: string) => `https://api.github.com/users/${userName}/starred{/owner}{/repo}`,
   },
 };
 

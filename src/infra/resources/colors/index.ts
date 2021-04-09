@@ -1,4 +1,5 @@
 const colors = {
+    //solid colors
     blue500: '#4299e1',
     blue800: '#2c5282',
 
@@ -9,6 +10,9 @@ const colors = {
     gray800 : '#2d3748',
     gray900 : '#1a202c',
 
+
+    // textures
+    card_shadow: 'rgba(0, 0, 0, 0.1)',
     transparent: 'rgba(255,255,255,0)',
 };
 

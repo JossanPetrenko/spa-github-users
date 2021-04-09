@@ -3,7 +3,7 @@ import colors from 'infra/resources/colors';
 
 export const UserCardWrapper = styled.div`
   margin: 12px 0px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px 0 ${colors.card_shadow};
 `;
 
 export const UserCardContent = styled.div`

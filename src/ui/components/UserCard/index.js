@@ -1,7 +1,9 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import {Card, Avatar, Button} from 'antd';
+import {Card, Avatar, Button, Skeleton} from 'antd';
 import {StarTwoTone, SaveTwoTone} from '@ant-design/icons';
+
+import GithunLink from 'ui/components/GithubLink';
 
 import {
   UserCardWrapper,
@@ -25,51 +27,70 @@ function UserCard({user}) {
   function handleStared(userLogin) {
     history.push(`/user/${userLogin}/starred`);
   }
+
+  const {
+    avatar_url,
+
+    login,
+    score,
+    type,
+    url,
+    id,
+    node_id,
+  } = user;
   return (
     <UserCardWrapper>
       <Card>
         <UserCardContent>
-          <a
-            target="_blank"
-            style={{cursor: 'pointer'}}
-            href={`https://github.com/${user.login}`}
-            rel="noreferrer">
-            <Avatar src={user.avatar_url} size={64} />
-          </a>
+          <GithunLink login={login}>
+            <Avatar src={avatar_url} size={64} />
+          </GithunLink>
           <UserCardInfoWrapper>
             <UserCardCollumWrapper flex={0.3}>
               <div>
-                <UserCardLabel>{strings.users.user_name}</UserCardLabel>
-                <UserCardValue>{user.login}</UserCardValue>
+                <UserCardLabel>{strings.users.name}</UserCardLabel>
+                <UserCardValue>
+                  {login || strings.comum.fallback_text}
+                </UserCardValue>
               </div>
               <div>
                 <UserCardLabel>{strings.users.score}</UserCardLabel>
-                <UserCardValue>{user.score}</UserCardValue>
+                <UserCardValue>
+                  {score || strings.comum.fallback_text}
+                </UserCardValue>
               </div>
 
               <div>
                 <UserCardLabel>{strings.users.type}</UserCardLabel>
-                <UserCardValue>{user.type}</UserCardValue>
+                <UserCardValue>
+                  {type || strings.comum.fallback_text}
+                </UserCardValue>
               </div>
             </UserCardCollumWrapper>
 
             <UserCardCollumWrapper flex={0.6}>
               <div>
                 <UserCardLabel>{strings.users.url}</UserCardLabel>
-                <UserCardValue>{user.url}</UserCardValue>
+                <UserCardValue>
+                  {url || strings.comum.fallback_text}
+                </UserCardValue>
               </div>
               <div>
                 <UserCardLabel>{strings.users.id}</UserCardLabel>
-                <UserCardValue>{user.id}</UserCardValue>
+                <UserCardValue>
+                  {id || strings.comum.fallback_text}
+                </UserCardValue>
               </div>
               <div>
                 <UserCardLabel>{strings.users.node_id}</UserCardLabel>
-                <UserCardValue>{user.node_id}</UserCardValue>
+                <UserCardValue>
+                  {node_id || strings.comum.fallback_text}
+                </UserCardValue>
               </div>
             </UserCardCollumWrapper>
             <UserCardCollumWrapper flex={0.1}>
               <Button
-                onClick={() => handleRepositories(user.login)}
+                onClick={() => handleRepositories(login)}
                 type="text"
                 icon={<SaveTwoTone />}>
                 {strings.users.repositories}
@@ -78,7 +99,7 @@ function UserCard({user}) {
               <UserCardButtonDivider />
 
               <Button
-                onClick={() => handleStared(user.login)}
+                onClick={() => handleStared(login)}
                 type="text"
                 icon={<StarTwoTone />}>
                 {strings.users.starred}
@@ -92,3 +113,13 @@ function UserCard({user}) {
 }
 
 export default UserCard;
+
+export function SkeletonUserCard() {
+  return (
+    <UserCardWrapper>
+      <Card>
+        <Skeleton active paragraph={{rows: 2}} avatar={{size: 64}} />
+      </Card>
+    </UserCardWrapper>
+  );
+}

@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-import {
-  GithubOutlined,
-  HomeOutlined,
-  QuestionOutlined,
-} from '@ant-design/icons';
+import {GithubOutlined} from '@ant-design/icons';
 
 import colors from 'infra/resources/colors';
 
@@ -48,24 +44,16 @@ export const NavbarButtonsWarpper = styled.div`
   color: ${colors.gray100};
   font-size: 20px;
   font-weight: 400;
-  padding-right: 32px;
+  padding: 8px 32px 0 0;
 `;
 
 export const ArrowRight = styled.div`
-  border-top: 60px solid transparent;
-  border-bottom: 16px solid transparent;
+  border-top: 60px solid ${colors.transparent};
+  border-bottom: 16px solid ${colors.transparent};
   border-left: 140vh solid ${colors.blue500};
 `;
 
 export const NavLinkWrapper = styled.span`
   color: ${colors.gray200};
   font-weight: 700;
-`;
-
-export const HomeIcon = styled(HomeOutlined)`
-  // color: ${colors.gray100};
-`;
-
-export const AboutIcon = styled(QuestionOutlined)`
-  // color: ${colors.gray100};
 `;

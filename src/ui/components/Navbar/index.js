@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import {Button} from 'antd';
+import {Button, Tooltip} from 'antd';
 
 import {
   NavbarWrapper,
@@ -12,36 +12,38 @@ import {
   NavbarTitleWrapper,
   NavLinkWrapper,
 } from './styles';
+
 import strings from 'infra/resources/strings';
+import colors from 'infra/resources/colors';
+import URl from 'infra/resources/urls';
 
 function Navbar() {
   const history = useHistory();
 
   function handleAbout() {
-    history.push('/about');
+    history.push(URl.APP.ABOUT);
   }
 
   function handleHome() {
-    history.push('/home');
+    history.push(URl.APP.HOME);
   }
 
   return (
     <NavbarWrapper>
       <NavbarContent>
         <NavbarTitleWrapper onClick={() => handleHome()}>
-          <NavbarTitle>
-            <NavbarIcon />
-            {strings.app.name}
-          </NavbarTitle>
+          <Tooltip
+            title={strings.comum.home}
+            color={colors.blue500}
+            placement={'right'}>
+            <NavbarTitle>
+              <NavbarIcon />
+              {strings.app.name}
+            </NavbarTitle>
+          </Tooltip>
         </NavbarTitleWrapper>
 
         <NavbarButtonsWarpper>
-          <Button
-            style={{marginRight: '10px'}}
-            type={'link'}
-            onClick={() => handleHome()}>
-            <NavLinkWrapper>{strings.comum.home}</NavLinkWrapper>
-          </Button>
           <Button onClick={() => handleAbout()} type={'link'}>
             <NavLinkWrapper>{strings.comum.about}</NavLinkWrapper>
           </Button>

@@ -5,12 +5,15 @@ const strings = {
     },
     comum:{
         about: 'About',
+        clear: 'Clear',
         home: 'Home',
         search:'Search',
         warning: 'Warning',
+        fallback_text: '---'
     },
     users : {
         id: 'Id',
+        name: 'Name',
         node_id: 'Node Id',
         repositories: 'Repositories',
         score: 'Score',
@@ -19,7 +22,6 @@ const strings = {
         starred: 'Starred',
         type: 'Type',
         url: 'Url',
-        user_name: 'User Name',
     }
   
 };
