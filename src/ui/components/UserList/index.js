@@ -17,8 +17,8 @@ function UserList() {
   }
   return (
     <>
-      {users.map((user) => (
-        <UserCard user={user} />
+      {users.map((user, index) => (
+        <UserCard user={user} cardId={index} />
       ))}
     </>
   );

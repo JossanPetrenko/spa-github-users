@@ -12,6 +12,7 @@ const strings = {
         fallback_text: '---'
     },
     users : {
+        github_tooltip: 'Go to github profile',
         id: 'Id',
         name: 'Name',
         node_id: 'Node Id',
