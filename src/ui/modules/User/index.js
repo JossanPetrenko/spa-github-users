@@ -1,12 +1,17 @@
 import React, {useEffect, useContext} from 'react';
 
+import {Spin} from 'antd';
+
 import UserInfo from 'ui/components/UserInfo';
 import RepositorieList from 'ui/components/RepositorieList';
 import StarredList from 'ui/components/StarredList';
+import LoadingSpin from 'ui/components/LoadingSpin';
 
 import GithubContext from 'context/github/githubContext';
 
 import {} from './styles';
+
+import colors from 'infra/resources/colors';
 
 function User({match}) {
   const githubContext = useContext(GithubContext);
@@ -43,6 +48,7 @@ function User({match}) {
 
   return (
     <div style={{flexDirection: 'column'}}>
+      {loading ? <LoadingSpin /> : null}
       <UserInfo
         user={user}
         getRepositories={handleRepositories}

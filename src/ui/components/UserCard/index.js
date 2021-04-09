@@ -16,7 +16,6 @@ import {
 } from './styles';
 
 import strings from 'infra/resources/strings';
-import colors from 'infra/resources/colors';
 
 function UserCard({user, cardId}) {
   const history = useHistory();
