@@ -1,12 +1,15 @@
-import React from "react";
-import SearchUser from "ui/components/SearchUser";
-import PageTemplate from "ui/components/PageTemplate";
+import React from 'react';
+import UserList from 'ui/components/UserList';
+import UserSearch from 'ui/components/UserSearch';
+import {HomeWrapper} from './styles';
 
 function Home() {
   return (
-    <PageTemplate>
-      <SearchUser loading={true} />
-    </PageTemplate>
+    <HomeWrapper>
+      <UserSearch />
+
+      <UserList />
+    </HomeWrapper>
   );
 }
 

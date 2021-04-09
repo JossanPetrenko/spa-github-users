@@ -1,8 +1,7 @@
-import React from "react";
-import PageTemplate from "ui/components/PageTemplate";
+import React from 'react';
 
 function NotFound() {
-  return <PageTemplate>NotFoundPage</PageTemplate>;
+  return <h1>NotFoundPage</h1>;
 }
 
 export default NotFound;

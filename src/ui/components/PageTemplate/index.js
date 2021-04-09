@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import Navbar from "ui/components/Navbar";
+import Navbar from 'ui/components/Navbar';
 
-import { PageTemplateWrapper } from "./styles";
+import {PageTemplateWrapper, TransparentHeader, ContentWrapper} from './styles';
 
-function PageTemplate({ children }) {
+function PageTemplate({children}) {
   return (
     <PageTemplateWrapper>
       <div>
         <Navbar />
       </div>
 
-      <div style={{ marginTop: 30 }}>{"PageTemplate"}</div>
-      <div>{children}</div>
+      <TransparentHeader />
+      <ContentWrapper>{children}</ContentWrapper>
     </PageTemplateWrapper>
   );
 }
