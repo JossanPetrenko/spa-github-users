@@ -4,9 +4,33 @@ exports[`# StarredList Must render StarredList component and compare changes 1`]
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <div
+        class="ant-card ant-card-bordered sc-bdvvaa bLzaKl"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <h1>
+            Starreds
+          </h1>
+        </div>
+      </div>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <div
+      class="ant-card ant-card-bordered sc-bdvvaa bLzaKl"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <h1>
+          Starreds
+        </h1>
+      </div>
+    </div>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

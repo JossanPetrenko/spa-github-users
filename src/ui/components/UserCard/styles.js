@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import colors from 'infra/resources/colors';
 
-export const UserCardWrapper = styled.div`
-  margin: 12px 0px;
-  box-shadow: 0 8px 16px 0 ${colors.card_shadow};
-`;
-
 export const UserCardContent = styled.div`
   display: flex;
 `;
@@ -31,10 +26,4 @@ export const UserCardLabel = styled.span`
 export const UserCardValue = styled.span`
   color: ${colors.gray700};
   font-weight: 700;
-`;
-
-export const UserCardButtonDivider = styled.div`
-  margin-top: 1px;
-  margin-bottom: 1px;
-  border-bottom: 1px solid ${colors.gray200};
 `;

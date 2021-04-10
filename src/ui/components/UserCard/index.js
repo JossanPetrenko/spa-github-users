@@ -1,18 +1,17 @@
 import React, {Fragment} from 'react';
 import {useHistory} from 'react-router-dom';
-import {Card, Avatar, Button, Skeleton} from 'antd';
-import {StarTwoTone, SaveTwoTone} from '@ant-design/icons';
+import {Avatar, Button, Skeleton} from 'antd';
+import {GithubOutlined} from '@ant-design/icons';
 
-import GithunLink from 'ui/components/GithubLink';
+import GithubLink from 'ui/components/GithubLink';
+import SimpleCard from 'ui/components/SimpleCard';
 
 import {
-  UserCardWrapper,
   UserCardLabel,
   UserCardValue,
   UserCardContent,
   UserCardInfoWrapper,
   UserCardCollumWrapper,
-  UserCardButtonDivider,
 } from './styles';
 
 import strings from 'infra/resources/strings';
@@ -37,69 +36,56 @@ function UserCard({user, cardId}) {
   } = user;
   return (
     <Fragment key={cardId}>
-      <UserCardWrapper>
-        <Card>
-          <UserCardContent>
-            <GithunLink login={login}>
-              <Avatar src={avatar_url} size={64} />
-            </GithunLink>
-            <UserCardInfoWrapper>
-              <UserCardCollumWrapper flex={0.3}>
-                <div>
-                  <UserCardLabel>{strings.users.name}</UserCardLabel>
-                  <UserCardValue>
-                    {login || strings.comum.fallback_text}
-                  </UserCardValue>
-                </div>
-                <div>
-                  <UserCardLabel>{strings.users.score}</UserCardLabel>
-                  <UserCardValue>
-                    {score || strings.comum.fallback_text}
-                  </UserCardValue>
-                </div>
+      <SimpleCard>
+        <UserCardContent>
+          <GithubLink login={login}>
+            <Avatar src={avatar_url} size={64} />
+          </GithubLink>
+          <UserCardInfoWrapper>
+            <UserCardCollumWrapper flex={0.3}>
+              <div>
+                <UserCardLabel>{strings.users.name}</UserCardLabel>
+                <UserCardValue>{login || strings.fallback_text}</UserCardValue>
+              </div>
+              <div>
+                <UserCardLabel>{strings.users.score}</UserCardLabel>
+                <UserCardValue>{score || strings.fallback_text}</UserCardValue>
+              </div>
 
-                <div>
-                  <UserCardLabel>{strings.users.type}</UserCardLabel>
-                  <UserCardValue>
-                    {type || strings.comum.fallback_text}
-                  </UserCardValue>
-                </div>
-              </UserCardCollumWrapper>
+              <div>
+                <UserCardLabel>{strings.users.type}</UserCardLabel>
+                <UserCardValue>{type || strings.fallback_text}</UserCardValue>
+              </div>
+            </UserCardCollumWrapper>
 
-              <UserCardCollumWrapper flex={0.6}>
-                <div>
-                  <UserCardLabel>{strings.users.url}</UserCardLabel>
-                  <UserCardValue>
-                    {url || strings.comum.fallback_text}
-                  </UserCardValue>
-                </div>
-                <div>
-                  <UserCardLabel>{strings.users.id}</UserCardLabel>
-                  <UserCardValue>
-                    {id || strings.comum.fallback_text}
-                  </UserCardValue>
-                </div>
-                <div>
-                  <UserCardLabel>{strings.users.node_id}</UserCardLabel>
-                  <UserCardValue>
-                    {node_id || strings.comum.fallback_text}
-                  </UserCardValue>
-                </div>
-              </UserCardCollumWrapper>
-              <UserCardCollumWrapper flex={0.1}>
-                <Button
-                  onClick={() => handleUser(login)}
-                  type="text"
-                  icon={<SaveTwoTone />}>
-                  {strings.users.repositories}
-                </Button>
-
-                <UserCardButtonDivider />
-              </UserCardCollumWrapper>
-            </UserCardInfoWrapper>
-          </UserCardContent>
-        </Card>
-      </UserCardWrapper>
+            <UserCardCollumWrapper flex={0.6}>
+              <div>
+                <UserCardLabel>{strings.users.url}</UserCardLabel>
+                <UserCardValue>{url || strings.fallback_text}</UserCardValue>
+              </div>
+              <div>
+                <UserCardLabel>{strings.users.id}</UserCardLabel>
+                <UserCardValue>{id || strings.fallback_text}</UserCardValue>
+              </div>
+              <div>
+                <UserCardLabel>{strings.users.node_id}</UserCardLabel>
+                <UserCardValue>
+                  {node_id || strings.fallback_text}
+                </UserCardValue>
+              </div>
+            </UserCardCollumWrapper>
+            <UserCardCollumWrapper flex={0.1}>
+              <Button
+                style={{height: '64px', fontSize: 20}}
+                onClick={() => handleUser(login)}
+                type="text"
+                icon={<GithubOutlined />}>
+                {strings.comum.details}
+              </Button>
+            </UserCardCollumWrapper>
+          </UserCardInfoWrapper>
+        </UserCardContent>
+      </SimpleCard>
     </Fragment>
   );
 }
@@ -108,10 +94,8 @@ export default UserCard;
 
 export function SkeletonUserCard() {
   return (
-    <UserCardWrapper>
-      <Card>
-        <Skeleton active paragraph={{rows: 2}} avatar={{size: 64}} />
-      </Card>
-    </UserCardWrapper>
+    <SimpleCard>
+      <Skeleton active paragraph={{rows: 2}} avatar={{size: 64}} />
+    </SimpleCard>
   );
 }

@@ -37,7 +37,7 @@ function UserSearch() {
 
   function handleOnChange(value) {
     setUser(value);
-    if (value.length >= 1) {
+    if (value?.length >= 1) {
       setAlert(false);
     }
   }
@@ -57,7 +57,7 @@ function UserSearch() {
         />
         <ClearWrapper>
           <Button
-            disabled={users.length < 1}
+            disabled={users?.length < 1}
             icon={<ClearOutlined />}
             size="large"
             onClick={() => handleClear()}>

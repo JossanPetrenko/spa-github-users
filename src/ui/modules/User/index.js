@@ -1,7 +1,5 @@
 import React, {useEffect, useContext} from 'react';
 
-import {Spin} from 'antd';
-
 import UserInfo from 'ui/components/UserInfo';
 import RepositorieList from 'ui/components/RepositorieList';
 import StarredList from 'ui/components/StarredList';
@@ -9,9 +7,7 @@ import LoadingSpin from 'ui/components/LoadingSpin';
 
 import GithubContext from 'context/github/githubContext';
 
-import {} from './styles';
-
-import colors from 'infra/resources/colors';
+import {UserWrapper} from './styles';
 
 function User({match}) {
   const githubContext = useContext(GithubContext);
@@ -47,19 +43,19 @@ function User({match}) {
   }
 
   return (
-    <div style={{flexDirection: 'column'}}>
+    <UserWrapper>
       {loading ? <LoadingSpin /> : null}
       <UserInfo
         user={user}
         getRepositories={handleRepositories}
         getStarreds={handleStarreds}
       />
-      {repositories.length >= 1 ? (
+      {repositories?.length >= 1 ? (
         <RepositorieList repositories={repositories} />
       ) : null}
 
-      {starreds.length >= 1 ? <StarredList starreds={starreds} /> : null}
-    </div>
+      {starreds?.length >= 1 ? <StarredList starreds={starreds} /> : null}
+    </UserWrapper>
   );
 }
 

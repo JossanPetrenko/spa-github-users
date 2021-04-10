@@ -5,15 +5,53 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <h1>
-        AboutPage
-      </h1>
+      <div>
+        <h1>
+          About This App
+        </h1>
+        <h3>
+          <b>
+            App to find Github users and see your informations ;)
+          </b>
+        </h3>
+        <br />
+        <p>
+          This is awesome app make using reactjs.
+        </p>
+        <br />
+        <br />
+        <p>
+          Version: 
+          <i>
+            0.1.0
+          </i>
+        </p>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <h1>
-      AboutPage
-    </h1>
+    <div>
+      <h1>
+        About This App
+      </h1>
+      <h3>
+        <b>
+          App to find Github users and see your informations ;)
+        </b>
+      </h3>
+      <br />
+      <p>
+        This is awesome app make using reactjs.
+      </p>
+      <br />
+      <br />
+      <p>
+        Version: 
+        <i>
+          0.1.0
+        </i>
+      </p>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

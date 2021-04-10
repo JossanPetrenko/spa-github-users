@@ -4,9 +4,33 @@ exports[`# RepositorieList Must render RepositorieList component and compare cha
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <div
+        class="ant-card ant-card-bordered sc-bdvvaa bLzaKl"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <h1>
+            Repositories
+          </h1>
+        </div>
+      </div>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <div
+      class="ant-card ant-card-bordered sc-bdvvaa bLzaKl"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <h1>
+          Repositories
+        </h1>
+      </div>
+    </div>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
