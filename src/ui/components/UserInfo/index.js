@@ -17,19 +17,19 @@ function UserInfo({user, getRepositories, getStarreds}) {
   }
 
   const {
-    name,
-    company,
     avatar_url,
-    location,
     bio,
     blog,
-    login,
-    html_url,
+    company,
     followers,
     following,
-    public_repos,
-    public_gists,
     hireable,
+    html_url,
+    location,
+    login,
+    name,
+    public_gists,
+    public_repos,
   } = user;
 
   return (

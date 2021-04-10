@@ -20,8 +20,7 @@ function App() {
           <Switch>
             <Route exact path={URL.APP.HOME} component={Home} />
             <Route exact path={URL.APP.ABOUT} component={About} />
-            <Route exact path="/user/:login/repositories" component={User} />
-            <Route exact path="/user/:login/starred" component={User} />
+            <Route exact path="/user/:login/" component={User} />
 
             {/*fallback route*/}
             <Route component={NotFound} />

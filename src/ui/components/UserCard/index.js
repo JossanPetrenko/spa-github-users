@@ -16,16 +16,13 @@ import {
 } from './styles';
 
 import strings from 'infra/resources/strings';
+import URL from 'infra/resources/urls';
 
 function UserCard({user, cardId}) {
   const history = useHistory();
 
-  function handleRepositories(userLogin) {
-    history.push(`/user/${userLogin}/repositories`);
-  }
-
-  function handleStared(userLogin) {
-    history.push(`/user/${userLogin}/starred`);
+  function handleUser(userLogin) {
+    history.push(URL.APP.USER(userLogin));
   }
 
   const {
@@ -91,20 +88,13 @@ function UserCard({user, cardId}) {
               </UserCardCollumWrapper>
               <UserCardCollumWrapper flex={0.1}>
                 <Button
-                  onClick={() => handleRepositories(login)}
+                  onClick={() => handleUser(login)}
                   type="text"
                   icon={<SaveTwoTone />}>
                   {strings.users.repositories}
                 </Button>
 
                 <UserCardButtonDivider />
-
-                <Button
-                  onClick={() => handleStared(login)}
-                  type="text"
-                  icon={<StarTwoTone />}>
-                  {strings.users.starred}
-                </Button>
               </UserCardCollumWrapper>
             </UserCardInfoWrapper>
           </UserCardContent>

@@ -7,7 +7,7 @@ import strings from 'infra/resources/strings';
 function RepositorieList({repositories}) {
   return (
     <>
-      {repositories.map((repo, index) => (
+      {repositories?.map((repo, index) => (
         <div key={index}>{repo.name}</div>
       ))}
     </>

@@ -2,7 +2,7 @@ const URL = {
   APP:{
     ABOUT: '/about',
     HOME: '/home',
-    USER:(userName: string) => `/user/${userName}/repositories`,
+    USER:(userName: string) => `/user/${userName}`,
   },
   USER: {
     USERS:(value: string) => `https://api.github.com/search/users?q=${value}`,
