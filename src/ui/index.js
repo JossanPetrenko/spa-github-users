@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 
 import PageTemplate from 'ui/components/PageTemplate';
 
@@ -18,11 +18,13 @@ function App() {
       <BrowserRouter>
         <PageTemplate>
           <Switch>
+            <Route exact path="/">
+              {<Redirect to={URL.APP.HOME} />}
+            </Route>
             <Route exact path={URL.APP.HOME} component={Home} />
             <Route exact path={URL.APP.ABOUT} component={About} />
             <Route exact path="/user/:login/" component={User} />
 
-            {/*fallback route*/}
             <Route component={NotFound} />
           </Switch>
         </PageTemplate>
