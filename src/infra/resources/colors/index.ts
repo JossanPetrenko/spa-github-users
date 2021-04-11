@@ -11,6 +11,11 @@ const colors = {
     gray900 : '#1a202c',
 
 
+    green500: '#48bb78',
+
+    red500: '#f56565',
+
+
     // textures
     card_shadow: 'rgba(0, 0, 0, 0.1)',
     transparent: 'rgba(255,255,255,0)',

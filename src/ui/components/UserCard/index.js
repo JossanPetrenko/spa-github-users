@@ -24,16 +24,8 @@ function UserCard({user, cardId}) {
     history.push(URL.APP.USER(userLogin));
   }
 
-  const {
-    avatar_url,
+  const {avatar_url, id, login, node_id, score, type, url} = user;
 
-    login,
-    score,
-    type,
-    url,
-    id,
-    node_id,
-  } = user;
   return (
     <Fragment key={cardId}>
       <SimpleCard>
@@ -44,7 +36,7 @@ function UserCard({user, cardId}) {
           <UserCardInfoWrapper>
             <UserCardCollumWrapper flex={0.3}>
               <div>
-                <UserCardLabel>{strings.users.name}</UserCardLabel>
+                <UserCardLabel>{strings.users.login}</UserCardLabel>
                 <UserCardValue>{login || strings.fallback_text}</UserCardValue>
               </div>
               <div>
